@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock title %}</title>
+    <style>
+      table {
+        margin: 20px 0;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        display: table;
+      }
+      table tr:nth-child(odd) {
+        background-color: #fff;
+      }
+      table tr:nth-child(even) {
+        background-color: #eee;
+      }
+      td, th {
+        padding: 8px 8px;
+        display: table-cell;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      {% for x in items %}
+      <tr>
+        <th>{{ x.key }}</th>
+        <td>{{ x.value }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
